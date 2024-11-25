@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neural Networks Visualization</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Inline styles for simplicity; you can move them to style.css */
+        #loading-message {
+            display: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visualizing Neural Networks</h1>
+    <form id="experiment-form">
+        <div class="input-group">
+            <label for="activation">Activation Function:</label>
+            <select id="activation" name="activation" required>
+                <option value="" disabled selected>Select an activation function</option>
+                <option value="relu">ReLU</option>
+                <option value="tanh">Tanh</option>
+                <option value="sigmoid">Sigmoid</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="lr">Learning Rate:</label>
+            <input type="number" step="0.01" id="lr" name="lr" required placeholder="e.g., 0.1">
+        </div>
+        <div class="input-group">
+            <label for="step_num">Number of Training Steps:</label>
+            <input type="number" step="1" id="step_num" name="step_num" required placeholder="e.g., 1000">
+        </div>
+        <button type="submit">Train and Visualize</button>
+    </form>
+
+    <!-- Loading message -->
+    <div id="loading-message">
+        Loading... Please wait while the model is training.
+    </div>
+
+    <div id="results" style="display: none;">
+        <h2>Results</h2>
+        <img id="result_gif" src="" alt="Visualization GIF" style="display: none; max-width: 100%; border: 1px solid #ddd;">
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
